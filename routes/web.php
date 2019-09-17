@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/wati', 'DiaryController@index')
+Route::get('/wati', 'DairyController@index')
     ->name('dairy.wati');
