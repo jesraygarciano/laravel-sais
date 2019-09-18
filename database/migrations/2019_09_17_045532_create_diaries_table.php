@@ -10,6 +10,7 @@ class CreateDiariesTable extends Migration
      * Run the migrations.
      *
      * @return void
+     * 
      */
     public function up()
     {
@@ -30,4 +31,5 @@ class CreateDiariesTable extends Migration
     {
         Schema::dropIfExists('diaries');
     }
+
 }

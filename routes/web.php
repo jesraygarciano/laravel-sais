@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/wati', 'DiaryController@index')
-    ->name('dairy.wati');
+Route::get('/', 'DiaryController@index')->name('dairy.index');
+Route::get('/diary/create', 'DiaryController@create')->name('dairy.create');
+
