@@ -17,7 +17,7 @@
     <div class="text-center h1 font-weight-bold my-4">Create diary</div>
     {{-- {{awaw}} --}}
     <!--ads-->
-    <div class="container">
+    {{-- <div class="container">
             <form action="">
                 <div class="form-row">
                     <div class="col-md-4 mb-3">
@@ -30,7 +30,26 @@
                     </div>
                 </div>
             </form>
-    </div>
+    </div> --}}
+
+
+<div class="container">
+    <form method="post" action="">
+        <div class="form-group">
+            @csrf
+            <label for="name">Diary name:</label>
+            <input type="text" class="form-control" name="show_name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="comment">Diary body:</label>
+            <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Create diary</button>
+    </form>
+</div>
+    
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
