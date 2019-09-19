@@ -13,42 +13,26 @@
 </head>
 
 <body>
-
-    <div class="text-center h1 font-weight-bold my-4">Create diary</div>
-    {{-- {{awaw}} --}}
-    <!--ads-->
-    {{-- <div class="container">
-            <form action="">
-                <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                        <label for="validationServer01" class="h3 font-weight-bold">Title</label>
-                        <input type="text" class="form-control is-valid" id="validationServer01"
-                            placeholder="Diary title" value="" required>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+        <section class="container m-5">
+                <div class="row justify-content-center">
+                    <div class="col-8">
+                        <form action="{{ route('diary.create') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label for="title">タイトル</label>
+                                <input type="text" class="form-control" name="title" id="title" />
+                            </div>
+                            <div class="form-group">
+                                <label for="body">本文</label>
+                                <textarea class="form-control" name="body" id="body"></textarea>
+                            </div>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary">投稿</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
-    </div> --}}
-
-
-<div class="container">
-    <form method="post" action="">
-        <div class="form-group">
-            @csrf
-            <label for="name">Diary name:</label>
-            <input type="text" class="form-control" name="show_name"/>
-        </div>
-
-        <div class="form-group">
-            <label for="comment">Diary body:</label>
-            <textarea class="form-control" rows="5" id="comment"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Create diary</button>
-    </form>
-</div>
-    
+            </section>    
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

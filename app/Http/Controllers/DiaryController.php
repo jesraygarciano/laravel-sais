@@ -23,8 +23,20 @@ class DiaryController extends Controller
         
         $diaries = Diary::all();
 
+        // dd($diaries);
         // return 'Hello Wati';
         return view('diaries.create');
 
+    }
+
+    public function store(Request $request)
+    {
+
+        dd($request->title);
+
+        $diaries = Diary::all();
+
+        dd($diaries);
+        return view('diaries.index');
     }
 }
