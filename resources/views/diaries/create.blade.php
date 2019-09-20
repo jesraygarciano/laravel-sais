@@ -13,27 +13,38 @@
 </head>
 
 <body>
-        <section class="container m-5">
-                <div class="row justify-content-center">
-                    <div class="col-8">
-                        <form action="{{ route('diary.create') }}" method="POST">
-                            @csrf
-                            <div class="form-group">
-                                <label for="title">タイトル</label>
-                                <input type="text" class="form-control" name="title" id="title" />
-                            </div>
-                            <div class="form-group">
-                                <label for="body">本文</label>
-                                <textarea class="form-control" name="body" id="body"></textarea>
-                            </div>
-                            <div class="text-right">
-                                <button type="submit" class="btn btn-primary">投稿</button>
-                            </div>
-                        </form>
+
+
+    <section class="container m-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+
+                @if($errors->any())
+                    <ul>
+                        @foreach($errors->all() as $message)
+                            <li class="alert alert-danger">{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                <form action="{{ route('diary.create') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group">
+                        <label for="title">タイトル</label>
+                        <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}">
                     </div>
-                </div>
-            </section>    
-    
+                    <div class="form-group">
+                        <label for="body">本文</label>
+                        <textarea class="form-control" name="body" id="body">{{ old('body') }}</textarea>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">投稿</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Diary;
+use App\Http\Requests\CreateDiary;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class DiaryController extends Controller
 {
@@ -29,14 +33,15 @@ class DiaryController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(CreateDiary $request)
     {
 
-        dd($request->title);
+        $diary = new Diary (); // Instantiate the Diary model       
 
-        $diaries = Diary::all();
+        $diary->title = $request->title ; // Substitute the title entered on the screen 
+        $diary->body = $request->body ; // Substitute the body entered on the screen $ diary- > save ( ); // Save to DB      
 
-        dd($diaries);
-        return view('diaries.index');
+        return redirect()->route('diary.index'); // Redirect to list page
+
     }
 }

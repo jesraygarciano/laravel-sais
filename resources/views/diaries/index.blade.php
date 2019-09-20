@@ -8,20 +8,23 @@
     <title>Wati</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
 </head>
 <body>
-    
-<div class="text-center h1 font-weight-bold my-4">Wati</div>
+
+
+    <a href="{{route('diary.create')}}"  class="btn btn-primary btn-block">
+         New Post
+    </a>
+
+
+{{-- <div class="text-center h1 font-weight-bold my-4">Wati</div>
 @foreach ($diaries as $diary)
     <div class="m-4 p-4 border border-primary">
         <p>{{ $diary->title }}</p>
         <p>{{ $diary->body }}</p>
         <p>{{ $diary->created_at }}</p>
-
     </div>
-@endforeach
+@endforeach --}}
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
